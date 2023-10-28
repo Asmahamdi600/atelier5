@@ -1,0 +1,84 @@
+ {{ form_start(f) }}
+
+{{ form_label(f.id) }}
+
+{{ form_widget(f.id) }}
+
+ {{ form_end(f) }}
+
+
+<table border=3>
+
+<tr>
+<td>id</td>
+<td>title</td>
+<td>category</td>
+<td>date publication</td>
+<td>published</td>
+<td>author</td>
+<td>action</td>
+
+
+
+</tr>
+
+{%for i in books%}
+<tr>
+<td>{{i.id}}</td>
+<td>{{i.title}}</td>
+<td>{{i.category}}</td>
+<td>{{i.publicationdate|date()}}</td>
+<td>{{i.published}}</td>
+<td>{{i.author}}</td>
+<td><a href="{{path('app_editbook', {'id':i.id})}}">edit</td>
+
+
+
+
+
+
+</tr>
+{%endfor%}
+
+
+</table>
+
+
+the number of category Sience Fiction est :{{ somme }}
+
+
+<table border=3>
+
+<tr>
+<td>id</td>
+<td>title</td>
+<td>category</td>
+<td>date publication</td>
+<td>published</td>
+<td>author</td>
+<td>action</td>
+
+
+
+</tr>
+
+{%for s in book%}
+<tr>
+<td>{{s.id}}</td>
+<td>{{s.title}}</td>
+<td>{{s.category}}</td>
+<td>{{s.publicationdate|date()}}</td>
+<td>{{s.published}}</td>
+<td>{{s.author}}</td>
+<td><a href="{{path('app_editbook', {'id':i.id})}}">edit</td>
+
+
+
+
+
+
+</tr>
+{%endfor%}
+
+
+</table>

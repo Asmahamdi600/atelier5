@@ -1,0 +1,38 @@
+ nb_author est {{author|length}}
+{% if author is defined and author|length>0 %}
+
+    <h1>Tableau AUTHORS</h1>
+    
+   <table border="3">
+        <tr>
+            <th>id</th>
+            <th>picture</th>
+            <th>username</th>
+            <th>email</th>
+            <th>nb_books</th>
+            <th>lien</th>
+        </tr>
+           {% for i in author %}
+        <tr>
+
+            <td>{{i.id}}</td>
+             <td> <img src="{{asset(i.picture)}}" style="height: 100; width: 100;"></td>
+            <td>{{i.username|upper}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.nb_books}}</td>
+            <td><a href="{{path('app_auhtorDetails',{'id':i.id})}}">Details</a></td> 
+        </tr>
+        {% endfor %}
+         
+
+        </table>
+       
+
+       
+        
+        
+         {%else%}
+         tab est vide
+         {%endif%}
+        
+        

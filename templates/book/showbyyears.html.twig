@@ -1,0 +1,35 @@
+<table border=3>
+
+<tr>
+<td>id</td>
+<td>title</td>
+<td>category</td>
+<td>date publication</td>
+<td>published</td>
+<td>author</td>
+<td>action</td>
+
+
+
+</tr>
+
+{%for i in books%}
+<tr>
+<td>{{i.id}}</td>
+<td>{{i.title}}</td>
+<td>{{i.category}}</td>
+<td>{{i.publicationdate|date()}}</td>
+<td>{{i.published}}</td>
+<td>{{i.author}}</td>
+<td><a href="{{path('app_editbook', {'id':i.id})}}">edit</td>
+
+
+
+
+
+
+</tr>
+{%endfor%}
+
+
+</table>
